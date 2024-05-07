@@ -4,7 +4,18 @@ import tkinter as tk
 class App:
     def __init__(self, master):
         self.master = master
-        master.title("Minha Aplicação de Produtividade")
+        master.title("Demand Control")
+
+        # Calculate the window position for centering
+        window_width = 400
+        window_height = 200
+        screen_width = master.winfo_screenwidth()
+        screen_height = master.winfo_screenheight()
+        x = (screen_width - window_width) // 2
+        y = (screen_height - window_height) // 2
+        
+        # Set the window position and size
+        master.geometry(f"{window_width}x{window_height}+{x}+{y}")
 
         self.label = tk.Label(master, text="Adicionar Nova Demanda:")
         self.label.pack()
